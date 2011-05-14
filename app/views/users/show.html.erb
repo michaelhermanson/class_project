@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Motto:</b>
+  <%= @user.motto %>
+</p>
+
+<p>
+  <b>Pet name:</b>
+  <%= @user.pet_name %>
+</p>
+
+<p>
+  <b>Mood:</b>
+  <%= @user.mood %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
