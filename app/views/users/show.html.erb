@@ -1,4 +1,47 @@
-<p id="notice"><%= notice %></p>
+<h1>Showing Member</h1>
+<div  class='show'  background-color: red;>
+  <p class='label'>Name:</p>
+  <p class='value'><%=h @user.name %></p>
+</div>
+
+<div class='show'>
+  <p class='label'>Motto:</p>
+  <p class='value'><%=h @user.motto %></p>
+</div>
+
+<div class='show'>
+  <p class='label'>Pet-Name:</p>
+  <p class='value'><%=h @user.pet_name %></p>
+</div>
+
+<div class='show'>
+  <p class='label'>Mood:</p>
+  <p class='value'><%=h @user.mood %></p>
+</div>
+
+<div class='show'>
+ <!--self.current_user = user
+    logged_user = current_user -->
+   <!--% if current_user == @user %-->
+   <% if session[:name] == @user.name %>
+  <!--% if same_user? user  %-->
+  <!--% if session[:user_id] == user.id %-->
+    <%= link_to 'Edit', edit_user_path(@user) %> 
+  <% end %>
+  <!--% if session[:user_id] == @user.id %-->
+   <% if session[:name] == @user.name %>
+  |  <td><%= link_to "delete", @user, :method => :delete, 
+            :confirm => "You sure?", 
+ 
+             :title => "Delete #{@user.name}" %></td>
+    <% end %>
+ | <%= link_to 'Back', users_path %>
+ |  <%= link_to "Sign Out", signout_path, :method => :delete %>
+</div>
+
+
+
+<!--p id="notice"><%= notice %></p>
 
 <p>
   <b>Name:</b>
@@ -22,4 +65,4 @@
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path %> -->

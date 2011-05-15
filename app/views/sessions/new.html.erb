@@ -1,0 +1,29 @@
+<!--<h1>Sessions#new</h1>
+<p>Find me in app/views/sessions/new.html.erb</p>
+<h1>Sign in</h1-->
+
+<p>PLEASE SIGN IN TO THE WEB POSSE SITE </p>
+ <img alt="Sample App" src="http://images2.layoutsparks.com/1/164955/the-cartoon-gang-cute.jpg" width="200" height="200"/>
+<p>&#160;</p>
+<p>Take A Peek? <%= link_to "Posse Page!", users_path %></p>
+
+<%= form_for(:session, :url => sessions_path) do |f| %>
+  <div class="field">
+        <%= f.label :name %><br />
+    <%= f.text_field :name, :size =>40, :maxlength => 40 %>
+  </div>
+    <div>
+    <%= f.label :password, 'Password:' %>
+    <%= f.password_field :password, :size => 40, :maxlength => 40 %>
+  </div>
+  <!--<div class="field">
+   <%= f.label :pet_name %><br />
+   <%= f.text_field :pet_name, :size => 30, :maxlength => 30 %>
+  </div-->
+  <div class="actions">
+    <%= f.submit "Sign in" %>
+  </div>
+ <% end %>
+
+<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+

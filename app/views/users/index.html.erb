@@ -1,6 +1,59 @@
-<h1>Listing users</h1>
+<h1>Listing Posse Members</h1>
+
+<!--<%= link_to 'New user', new_user_path %> -->
+
+<img alt="Sample App" src="http://images2.layoutsparks.com/1/164955/the-cartoon-gang-cute.jpg" width="200" height="200"/>
+<p>&#160;</p>
 
 <table>
+  <tr>
+    <th >Name</th>
+    <th>Motto</th>
+    <th>Pet_Name</th>
+    <th>Mood</th>
+  </tr>
+
+<% for user in @users %>
+  <tr >
+    <td><%=h user.name %></td>
+    <td><%=h user.motto %></td>
+    <td><%=h user.pet_name %></td>
+    <td><%=h user.mood %></td>
+    <% if session[:name] != nil  %>
+     <td><%= link_to 'Show', user %></td>
+        <% end %>
+    <!--% if current_user.name %-->
+    <!--% if session[:name] == user.name %>
+    <td><%= link_to 'Show', user %></td-->
+     <!--% if session[:user_id] == user.id %-->
+     <!--% if same_user? @user  %-->
+    <!--% if logged_user.name == h.user.name %-->
+    <!--% if logged_user == current_user%-->
+     <% if session[:name] == user.name %>
+   <td> |  <%= link_to 'Edit', edit_user_path(user) %></td>
+       <% end %>
+    <% if session[:name] == user.name %>
+     <!--% if current_user == user %-->
+  <td>  | <%= link_to "delete", user, :method => :delete, 
+            :confirm => "You sure?", 
+              :title => "Delete #{user.name}" %></td>
+
+    <% end %>
+   </tr>
+
+<% end %>
+
+</table>
+
+<p>&#160;</p>
+   <% if !signed_in? %>
+  <%= link_to 'Back', signin_path %>
+     <% end %>
+  <!--%= link_to 'Back', users_path %-->
+| <%= link_to 'New Member', new_user_path %>
+|  <%= link_to "Sign Out", signout_path, :method => :delete %>
+
+<!--table>
   <tr>
     <th>Name</th>
     <th>Motto</th>
@@ -26,4 +79,4 @@
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_user_path %-->

@@ -1,6 +1,53 @@
 <h1>Editing user</h1>
 
+<% if same_user? @user %>
+
+ <!-- <%= error_messages_for :user %> -->
+
+  <% form_for(@user) do |f| %>
+    <div background-color:red;>
+      <%= f.label :name, 'Name:' %>
+      <%= f.text_field :name, :size => 40, :maxlength => 40,
+            :disabled => 'disabled', :class => 'disabled' %>
+    </div>
+
+    <div background-color:tan;>
+      <%= f.label :motto, 'Motto:' %>
+      <%= f.text_field :motto, :size => 40, :maxlength => 80 %>
+    </div>
+
+    <div background-color:tan;>
+    <%= f.label :pet_name, 'Pet-Name:' %>
+    <%= f.text_field :pet_name, :size => 30, :maxlength => 30 %>
+   </div>
+
+  </div background-color:tan;>
+    <%= f.label :mood, 'Mood:' %>
+    <%= f.text_field :mood, :size => 40, :maxlength => 30  %>
+  </div>
+
+    <div background-color:brown;>
+      <%= f.submit "Update" %>
+    
+    </div>
+
+ 
+
+  <% end %>
+
+<% else %>
+
+  <p class='advise'>
+    You must be the Creater of this Record to Change this Information.
+  </p>
+
+<% end %>
+<%= link_to "Sign Out", signout_path, :method => :delete %>
+<%= link_to 'Show', @user %> 
+<%= link_to 'Back', users_path %>
+
+<!--
 <%= render 'form' %>
 
 <%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path %> -->

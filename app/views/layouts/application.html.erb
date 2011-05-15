@@ -2,11 +2,30 @@
 <html>
 <head>
   <title>WebPosse</title>
-  <%= stylesheet_link_tag :all %>
+<!-- <%= stylesheet_link_tag "webposse", :media => 'screen' %> --> 
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+  <%= render 'layouts/stylesheets' %>
+<style type="text/css">
+    body { background-color: #A9F5D0; color: #666; text-align: center; font-family: arial, sans-serif; }
+    div. {
+      width: 25em;
+      padding: 0 4em;
+      margin: 4em auto 0 auto;
+      border: 1px solid #ccc;
+      border-right-color: #999;
+      border-bottom-color: #999;
+    }
+    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
+    p.label{ color: #0B3861; }
+    p.value{ color: #8A084B; }
+    div.actions{ color: #380B61; }
+    th { color: #610B0B; }
+    td{color: #0B3861;}
+  </style>
 </head>
-<body>
+
+<body background-color:tan;>
 
 <%= yield %>
 
